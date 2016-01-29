@@ -7,21 +7,27 @@ import pytest
 # each element in a sequence of numbers by 2
 # ================================
 def double(sequence):
-	pass
+    result = [ item*2 for item in sequence if item != 0 ]
+    return result
+        
 
 def test_double():
     assert double(range(3)) == [0,2,4]
 
+#print double([1,2,3,4])
 
 # Exercise 2
 # Use list comprehension to create a function that finds
 # the odd elements in a sequence of numbers
 # ================================
 def odd(sequence):
-	pass
+    result = [item for item in sequence if item%2 != 0]
+    return result
 
 def test_odd():
-	assert odd(range(6)) == [1,3,5]
+    assert odd(range(6)) == [1,3,5]
+
+#print odd(range(6))
 
 
 # Exercise 3
@@ -29,11 +35,14 @@ def test_odd():
 # the elements divisible by 3 and 5 in a sequence of numbers
 # ================================
 def by_five(sequence):
-	pass
+    result = [ item for item in sequence if item%5 == 0 and item %3 ==0]
+    return result
+        
 
 def test_by_five():
-	assert by_five(range(1,31)) == [15, 30]
-
+    assert by_five(range(1,31)) == [15, 30]
+    
+#print by_five(range(1,31))
 
 # Exercise 4
 # Use list comprehension to create a function that finds
